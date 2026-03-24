@@ -329,12 +329,22 @@ h1 {
 
 .highlight-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 18px;
 }
 
 .highlight-card {
+  grid-column: span 4;
   min-height: 240px;
+}
+
+.highlight-card--hero {
+  grid-column: span 8;
+  min-height: 280px;
+}
+
+.highlight-card--note {
+  grid-column: span 8;
 }
 
 .highlight-card__index {
@@ -342,6 +352,13 @@ h1 {
   margin-bottom: 22px;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.source-note {
+  margin-top: 18px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .cta {
@@ -373,6 +390,12 @@ h1 {
   .overview,
   .highlight-grid {
     grid-template-columns: 1fr;
+  }
+
+  .highlight-card,
+  .highlight-card--hero,
+  .highlight-card--note {
+    grid-column: span 1;
   }
 }
 
